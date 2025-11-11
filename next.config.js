@@ -1,8 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // --- START OF REQUIRED ADDITIONS FOR GITHUB PAGES ---
+  // 1. Force the build output to be static HTML/CSS/JS files
+  output: 'export', 
+
+  // 2. Set the base path to your repository name
+  // This ensures assets (like CSS, images) load correctly on the subpath URL
+  basePath: '/Affan-Portfolio', 
+  // --- END OF REQUIRED ADDITIONS FOR GITHUB PAGES ---
+
   allowedDevOrigins: ["*.preview.same-app.com"],
   images: {
-    unoptimized: true,
+    // This is already set correctly, as image optimization isn't supported for static export
+    unoptimized: true, 
     domains: [
       "source.unsplash.com",
       "images.unsplash.com",
@@ -24,6 +34,7 @@ const nextConfig = {
         protocol: "https",
         hostname: "ext.same-assets.com",
         pathname: "/**",
+        
       },
       {
         protocol: "https",
