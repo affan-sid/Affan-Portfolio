@@ -4,6 +4,11 @@ name: Deploy Next.js to GitHub Pages
 on:
   push:
     branches: ["master"] # Change to 'main' if your primary branch is main
+    
+permissions:
+  contents: read # Allows checkout
+  pages: write   # Allows deployment to Pages
+  id-token: write # FIXES THE "Unable to get ACTIONS_ID_TOKEN_REQUEST_URL" ERROR
 
 jobs:
   build-and-deploy:
